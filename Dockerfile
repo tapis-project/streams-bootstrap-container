@@ -10,8 +10,6 @@ ADD requirements.txt /home/tapis/tapy/bootstrap_requirements.txt
 RUN pip install -r /home/tapis/tapy/bootstrap_requirements.txt
 RUN pip install -r /home/tapis/tapy/requirements.txt
 
-ADD config_local.json /home/tapis/config_local.json
-
 RUN mkdir /home/tapis/tapy/dyna
 
 RUN cp -r /home/tapis/tapy/tapy/dyna/* /home/tapis/tapy/dyna
