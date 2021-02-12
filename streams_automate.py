@@ -48,6 +48,8 @@ def create_meta_collections():
     t.meta.createCollection(db=os.environ['STREAMS_DB'], collection='streams_templates_metadata')
 
     t.meta.createCollection(db=os.environ['STREAMS_DB'], collection='streams_channel_metadata')
+    
+    t.meta.createCollection(db=os.environ['STREAMS_DB'], collection='streams_metrics')
 
 
 if __name__ == "__main__":
