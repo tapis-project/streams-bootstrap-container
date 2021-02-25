@@ -1,12 +1,13 @@
 import requests
-from tapy.dyna import DynaTapy
+from tapipy.tapis import Tapis
 import json
 import os
 from common.config import conf
 
 def create_streams_service_token():
-    t = DynaTapy(base_url=os.environ['TAPIS_BASEURL'], username=os.environ['STREAMS_USER'], account_type='service',
+    t = Tapis(base_url=os.environ['TAPIS_BASEURL'], username=os.environ['STREAMS_USER'], account_type='service',
                  service_password=os.environ['STREAMS_SERVICE_PASSWORD'], tenant_id='master')
+    t.get_tokens()
 
 def create_streams_user_role()
     ## Create streams_user role in sk
@@ -20,9 +21,9 @@ def create_streams_user_role()
 
 
 def create_meta_service_token():
-    t = DynaTapy(base_url=os.environ['TAPIS_BASEURL'], username='meta', account_type='service',
+    t = Tapis(base_url=os.environ['TAPIS_BASEURL'], username='meta', account_type='service',
                  service_password=os.environ['META_SERVICE_PASSWORD'], tenant_id='master')
-
+    t.get_tokens()
 
 def create_meta_db_grant_pems():
     t = create_meta_service_token()
